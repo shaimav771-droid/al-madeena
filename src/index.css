@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-navy: #0E113C;
+  --color-navy-light: #181C54;
+  --color-navy-tint: #EEF0F8;
+  --color-accent-amber: #FBA920;
+  --color-amber-hover: #E0910E;
+  --color-amber-light: #FFF8EB;
+  --color-page-bg: #F6F8FB;
+  --color-surface-white: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-primary-text: #0E113C;
+  --color-secondary-text: #5A627A;
+  --color-muted-text: #94A3B8;
+
+  /* Backward compatibility aliases */
+  --color-dd-black: #0E113C;
+  --color-dd-dark: #070926;
+  --color-dd-secondary-black: #181C54;
+  --color-dd-bg: #F6F8FB;
+  --color-dd-light-gray: #EEF0F8;
+  --color-dd-border: #E2E8F0;
+  --color-dd-primary-text: #0E113C;
+  --color-dd-secondary-text: #5A627A;
+  --color-dd-muted-text: #94A3B8;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+  background-color: #F6F8FB;
+  color: #0E113C;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EEF0F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Print styling for professional reports */
+@media print {
+  aside, header, .no-print, button, .actions-column {
+    display: none !important;
+  }
+  body, main {
+    background: #FFFFFF !important;
+    color: #0E113C !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-page-break {
+    page-break-after: always;
+  }
+  .shadow-dd-card, .shadow-sm, .shadow-md, .shadow-dd-elevated {
+    box-shadow: none !important;
+    border: 1px solid #CBD5E1 !important;
+  }
+}
+
+/* Hide WebKit native datalist dropdown arrows on text inputs */
+input[type="text"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
